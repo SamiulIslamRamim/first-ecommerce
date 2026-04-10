@@ -1,4 +1,5 @@
 import Cointainer from "@/components/Cointainer";
+import { Button } from "@/components/ui/button";
 import React from "react";
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
           minima! Repellendus itaque mollitia hic distinctio fugiat deserunt
           iusto possimus voluptatibus quia.
         </p>
+        <Button> Click Me</Button>
       </div>
     </Cointainer>
   );
