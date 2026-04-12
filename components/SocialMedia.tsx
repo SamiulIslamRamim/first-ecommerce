@@ -40,7 +40,7 @@ const SocialMedia = ({className, iconClassName, tooltipClassName}: Props) => {
         {socialLink?.map((item) => (
           <Tooltip key= {item?.title}>
             <TooltipTrigger >
-            <Link href={item?.href} target="_blank" rel="noopener noreferrer" className={cn('inline-flex p-2 border rounded-full hover:text-white hover:border-shop_light_green hoverEffect', iconClassName)}>
+            <Link key= {item?.title}href={item?.href} target="_blank" rel="noopener noreferrer" className={cn('inline-flex p-2 border rounded-full hover:text-white hover:border-shop_light_green hoverEffect', iconClassName)}>
               {item?.icon}
               </Link>
             </TooltipTrigger>
