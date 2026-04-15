@@ -29,7 +29,7 @@ const Header = async() => {
               <Show when ="signed-in">
                 <UserButton />
               </Show>
-            <SignIn />
+            { !user &&<SignIn />}
             </ClerkLoaded>
         </div>
         {/* NavAdmin */}
