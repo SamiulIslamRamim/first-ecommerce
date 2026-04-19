@@ -2,12 +2,49 @@ import { cn } from "@/lib/utils";
 
 const Title = ({
   children,
-  classname,
+  className,
 }: {
   children: React.ReactNode;
-  classname?: string;
+  className?: string;
 }) => {
-  return <h2 className={cn("text-3xl md:text-3xl font-bold text-shop_dark_green capitalize tracking-wide fonst-sans", classname)}>{children}</h2>;
+  return (
+    <h2
+      className={cn(
+        "text-3xl md:text-3xl font-bold text-shop_dark_green capitalize tracking-wide fonst-sans",
+        className,
+      )}
+    >
+      {children}
+    </h2>
+  );
+};
+const SubTitle = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <h2
+      className={cn(
+        "font-semibold text-gray-900 fonst-sans",
+        className,
+      )}
+    >
+      {children}
+    </h2>
+  );
 };
 
-export { Title };
+const SubText = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return <p className={cn("text-gray-600 text-sm", className)}>{children}</p>;
+};
+
+export { Title, SubTitle, SubText };
