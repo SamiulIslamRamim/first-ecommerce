@@ -1,9 +1,13 @@
 import Cointainer from "@/components/Cointainer";
 import HomeBanner from "@/components/HomeBanner";
+import ProductGrid from "@/components/ProductGrid";
 const Home = () => {
   return (
-    <Cointainer className="bg-shop_light_pink">
+    <Cointainer>
       <HomeBanner />
+      <div className="py-10">
+        <ProductGrid />
+      </div>
     </Cointainer>
   );
 };
