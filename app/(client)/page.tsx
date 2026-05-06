@@ -1,16 +1,19 @@
 import Cointainer from "@/components/Cointainer";
 import HomeBanner from "@/components/HomeBanner";
 import HomeCategory from "@/components/HomeCategory";
+import LatestBlog from "@/components/LatestBlog";
 import ProductGrid from "@/components/ProductGrid";
-import { getCategories } from "@/sanity/queries/query";
-const Home = async() => {
+import ShopByBrands from "@/components/ShopByBrands";
+import { getCategories } from "@/sanity/queries/index";
+const Home = async () => {
   const categories = await getCategories(6);
-  console.log(categories);
   return (
     <Cointainer>
       <HomeBanner />
-        <ProductGrid />
-        <HomeCategory />
+      <ProductGrid />
+      <HomeCategory categories={categories} />
+      <ShopByBrands />
+      <LatestBlog />
     </Cointainer>
   );
 };

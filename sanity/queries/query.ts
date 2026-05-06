@@ -1,20 +1,15 @@
 import { log } from "console";
-import { sanityFetch } from "../lib/live";
+import { defineQuery } from "next-sanity";
 
-const getCategories = async (quantity?: number) => {
-  try {
-    const query = quantity
-      ? `*[_type == 'category] | order(name asc) [0...$quantity]{..., "productCount":count(*[_type == "product" && references(^.id)])}`
-      : `*[_type == 'category] | order(name asc) {..., "productCount":count(*[_type == "product" && references(^.id)])}`;
-    const { data } = await sanityFetch({
-      query,
-      params: quantity ? { quantity } : {},
-    });
-    return data;
-  } catch (error) {
-    console.log("Error fetching categories", error);
-    return [];
-  }
-};
+const BRANDS_QUERY = defineQuery(`*[_type=='brand'] | order(title asc) `);
 
-export { getCategories };
+const LATEST_BLOG_QUERY = defineQuery(
+  ` *[_type == 'blog' && isLatest == true]|order(name asc){
+      ...,
+      blogcategories[]->{
+      title
+    }
+    }`
+);
+
+export { BRANDS_QUERY, LATEST_BLOG_QUERY };
