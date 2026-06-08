@@ -3,9 +3,11 @@ import React from 'react'
 const CategoryList = () => {
   return (
     <div>
-      categorylist
+      <div>
+        
+      </div>
     </div>
   )
 }
 
-export default CategoryList
+export default CategoryList;
