@@ -10,7 +10,7 @@ interface Props {
 const HomeTabBar = ({ selectedTab, onTabSelect }: Props) => {
   return (
     <div className="flex items-center justify-between flex-wrap gap-5">
-      <div className="flex items-center gap-3 text-sm font-semibold">
+      <div className="flex items-center gap-3 text-sm font-semibold flex-wrap">
         {productType?.map((item) => (
           <button
           onClick={()=>onTabSelect(item?.title)}
