@@ -1,11 +1,11 @@
 import React from 'react'
 
-const page = () => {
+const SingleBlogPage = () => {
   return (
     <div>
-      blog page
+    dynamic blogs
     </div>
   )
 }
 
-export default page
+export default SingleBlogPage
